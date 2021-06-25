@@ -6,11 +6,11 @@ import { BrowserRouter, /* Redirect, */ Route, Switch } from 'react-router-dom';
 // import { AuthProvider, useAuth } from './contexts/auth/AuthContext';
 
 import Home from './pages/home';
+import SignIn from './pages/signIn';
+import Profile from './pages/profile';
 import HomeLayout from './layouts/homeLayaout';
-// import SignInLayout from './layouts/SignInLayout';
+import LoginLayout from './layouts/loginLayout';
 
-// import Profile from './pages/Profile';
-// import SignIn from './pages/SignIn';
 // import SignUp from './pages/SignUp';
 
 function Router() {
@@ -18,8 +18,8 @@ function Router() {
     <BrowserRouter>
       {/* <AuthProvider> */}
       <Switch>
-        {/* <RouteWrapper path="/sign-in" layout={SignInLayout} page={SignIn} />
-          <RouteWrapper path="/sign-up" layout={SignInLayout} page={SignUp} /> */}
+        <RouteWrapper path="/sign-in" layout={LoginLayout} page={SignIn} />
+        {/*  <RouteWrapper path="/sign-up" layout={SignInLayout} page={SignUp} /> */}
         <RouteWrapper
           exact
           path="/"
@@ -27,18 +27,12 @@ function Router() {
           layout={HomeLayout}
           page={Home}
         />
-        {/* <RouteWrapper
-            path="/workout"
-            privateRoute
-            layout={DashboardLayout}
-            page={Workout}
-          /> */}
-        {/* <RouteWrapper
-            path="/profile"
-            privateRoute
-            layout={DashboardLayout}
-            page={Profile}
-          /> */}
+        <RouteWrapper
+          path="/profile"
+          privateRoute
+          layout={HomeLayout}
+          page={Profile}
+        />
       </Switch>
       {/* </AuthProvider> */}
     </BrowserRouter>
