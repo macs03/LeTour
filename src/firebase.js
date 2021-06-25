@@ -2,14 +2,26 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 
+const credentials = {
+  REACT_APP_FIREBASE_API_KEY: 'AIzaSyBCLO1mTASlQOemHVonrZry1h0KQT3L4Qs',
+  REACT_APP_FIREBASE_AUTH_DOMAIN: 'letour-5445a.firebaseapp.com',
+  REACT_APP_FIREBASE_DATABASE_URL: '',
+  REACT_APP_FIREBASE_PROJECT_ID: 'letour-5445a',
+  REACT_APP_FIREBASE_STORAGE_BUCKET: 'letour-5445a.appspot.com',
+  REACT_APP_FIREBASE_MESSAGING_SENDER_ID: '317903851261',
+  REACT_APP_FIREBASE_APP_ID: '1:317903851261:web:0e79cd3ee43a7f2ad53894',
+  REACT_APP_MEASUREMENT_ID: 'G-ERPJRD1217'
+};
+
 const firebaseSettings = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
+  apiKey: credentials.REACT_APP_FIREBASE_API_KEY,
+  authDomain: credentials.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: credentials.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: credentials.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: credentials.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: credentials.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: credentials.REACT_APP_FIREBASE_APP_ID,
+  measurementId: credentials.REACT_APP_MEASUREMENT_ID
 };
 
 const app = !firebase.apps.length
